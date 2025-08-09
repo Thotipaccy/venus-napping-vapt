@@ -6,6 +6,140 @@ Prepared by: Nibishaka thoti Pacifique
 
 ---
 
+## Table of Contents 📚
+
+- [1. Web Application Penetration Testing](#web-app-pt)
+  - [1.1 Executive Summary 📝](#web-app-pt-1-1)
+  - [1.2 Background 🧭](#web-app-pt-1-2)
+  - [1.3 Objectives 🎯](#web-app-pt-1-3)
+  - [1.4 Scope of Assessment 🗺️](#web-app-pt-1-4)
+  - [1.5 Out of Scope 🚫](#web-app-pt-1-5)
+  - [1.6 Tools Used 🧰](#web-app-pt-1-6)
+- [Executive Summary 📄](#exec-summary)
+- [Scope and Objectives 🎯](#scope-objectives)
+  - [In-Scope Assets](#in-scope-assets)
+  - [Objectives](#objectives-main)
+  - [Constraints and Assumptions](#constraints-assumptions)
+- [Target Overview 🔎](#target-overview)
+- [Methodology 🔧](#methodology)
+  - [Approach](#approach)
+  - [Tools and Techniques](#tools-techniques)
+- [Findings — Venus 🛡️](#findings-venus)
+- [Findings — Napping 🛡️](#findings-napping)
+- [Risk Prioritization ⚠️](#risk-prioritization)
+- [Remediation Roadmap 🛠️](#remediation-roadmap)
+- [Conclusion ✅](#conclusion)
+- [Appendix A — Evidence Gallery 🖼️](#appendix-a)
+- [Appendix B — Testing Log 🧪](#appendix-b)
+- [Appendix C — References 📚](#appendix-c)
+
+---
+
+## Table of Contents 📚
+
+- 1. Web Application Penetration Testing
+  - 1.1 Executive Summary 📝
+  - 1.2 Background 🧭
+  - 1.3 Objectives 🎯
+  - 1.4 Scope of Assessment 🗺️
+  - 1.5 Out of Scope 🚫
+  - 1.6 Tools Used 🧰
+- Executive Summary 📄
+- Scope and Objectives 🎯
+  - In-Scope Assets
+  - Objectives
+  - Constraints and Assumptions
+- Target Overview 🔎
+- Methodology 🔧
+  - Approach
+  - Tools and Techniques
+- Findings — Venus 🛡️
+- Findings — Napping 🛡️
+- Risk Prioritization ⚠️
+- Remediation Roadmap 🛠️
+- Conclusion ✅
+- Appendix A — Evidence Gallery 🖼️
+- Appendix B — Testing Log 🧪
+- Appendix C — References 📚
+
+---
+
+<a id="web-app-pt"></a>
+## 1. Web Application Penetration Testing
+
+<a id="web-app-pt-1-1"></a>
+### 1.1 Executive Summary 📝
+
+X Company engaged to conduct a black-box penetration test and vulnerability assessment. This report presents the results of a Vulnerability Assessment and Penetration Testing (VAPT) conducted on two virtual servers, *Venus* and *Napping*, hosted on VulnHub. The goal was to assess potential security weaknesses, simulate realistic attack scenarios, and propose targeted recommendations to strengthen system defenses. Multiple vulnerabilities were identified, ranging from misconfigurations and outdated software to privilege escalation paths. Key recommendations include patching, configuration hardening, and improved access controls.
+
+<a id="web-app-pt-1-2"></a>
+### 1.2 Background 🧭
+
+This exercise aimed to perform penetration testing of the servers in scope to determine if they were vulnerable to attacks and exploitation. The test consisted of manual testing to detect and exploit vulnerabilities. The assessment was conducted to identify the security vulnerabilities in the servers in scope, assess their potential impact, and provide detailed recommendations for remediation.
+
+<a id="web-app-pt-1-3"></a>
+### 1.3 Objectives 🎯
+
+**The objective of the tests performed was to:**
+
+- Identify the possible vulnerabilities and gaps in the servers.
+- Assess the gaps and vulnerabilities to determine the risk associated.
+- Suggest recommendations to overcome existing vulnerabilities and gaps.
+
+**This assessment report contains:**
+
+- **Technical details** of the vulnerabilities discovered.
+- **Risk mitigation recommendations** that need to be implemented to ensure that the systems are secure from the risks arising due to the discovered vulnerabilities.
+
+<a id="web-app-pt-1-4"></a>
+### 1.4 Scope of Assessment 🗺️
+
+**The scope for this security assessment includes the following tests:**
+
+- Information gathering
+- Authentication
+
+**URLs 🔗**
+
+- http://192.168.1.101
+- http://192.168.1.197
+
+**Environment Details 🖥️**
+
+| Item | Value |
+| --- | --- |
+| Server Names | Venus, Napping |
+| Environment | Production |
+| Accessibility | Local |
+| Venus IP | 192.168.1.101 |
+| Venus MAC address | 08:00:27:18:54:5E |
+| Napping IP | 192.168.1.197 |
+| Napping MAC address | 08:00:27:49:EE:4D |
+| Authentication Method | Login & SSH |
+
+<a id="web-app-pt-1-5"></a>
+### 1.5 Out of Scope 🚫
+
+**The following activities and applications were considered out of scope for this engagement:**
+
+- Social engineering
+- Denial of service
+- Vulnerability fixes
+
+<a id="web-app-pt-1-6"></a>
+### 1.6 Tools Used 🧰
+
+The following tools were used for the testing:
+
+- Burp Suite
+- Nmap
+- Gobuster
+- Kali Linux
+- Mozilla Firefox extensions
+
+---
+
+<a id="exec-summary"></a>
 ### Executive Summary
 
 This engagement assessed two VulnHub-hosted servers — Venus and Napping — representative of X Company's environment. The assessment combined vulnerability assessment and penetration testing techniques to identify weaknesses, demonstrate exploitability, and provide actionable remediation guidance.
@@ -19,23 +153,28 @@ Overall risk: High. Multiple chained findings allow an attacker to gain initial 
 
 ---
 
+<a id="scope-objectives"></a>
 ## Scope and Objectives
 
+<a id="in-scope-assets"></a>
 ### In-Scope Assets
 - Venus: VulnHub target “The Planets: Venus”
 - Napping: VulnHub target “Napping: 1.0.1”
 
+<a id="objectives-main"></a>
 ### Objectives
 - Identify vulnerabilities affecting confidentiality, integrity, and availability.
 - Validate exploitability through controlled penetration testing.
 - Provide remediation prioritized by risk.
 
+<a id="constraints-assumptions"></a>
 ### Constraints and Assumptions
 - Testing conducted within VulnHub lab boundaries against Venus and Napping only.
 - Network-layer details (IP/MAC) are evidenced via screenshots; exact values should be taken from embedded artifacts.
 
 ---
 
+<a id="target-overview"></a>
 ## Target Overview
 
 The following screenshots document network discovery and target identification.
@@ -52,14 +191,17 @@ Additional reconnaissance artifacts:
 
 ---
 
+<a id="methodology"></a>
 ## Methodology
 
+<a id="approach"></a>
 ### Approach
 - Passive and active recon to enumerate services, technologies, and attack surface.
 - Vulnerability assessment via configuration review and manual verification.
 - Exploitation to validate impact while minimizing service disruption.
 - Post-exploitation enumeration to assess privilege escalation and data exposure.
 
+<a id="tools-techniques"></a>
 ### Tools and Techniques
 - Network and service discovery (e.g., nmap, browser-based enumeration)
 - Web attack tooling (e.g., Hydra/ffuf/gobuster, as applicable)
@@ -73,6 +215,7 @@ Evidence of tooling used:
 
 ---
 
+<a id="findings-venus"></a>
 ## Findings — Venus
 
 ### V1. Exposed Administrative Interface (Authentication Weakness) — High
@@ -132,6 +275,7 @@ Additional Venus evidence and context:
 
 ---
 
+<a id="findings-napping"></a>
 ## Findings — Napping
 
 ### N1. Weak Authentication on Web Entry Point — High
@@ -167,6 +311,7 @@ Network identification evidence:
 
 ---
 
+<a id="risk-prioritization"></a>
 ## Risk Prioritization
 
 | ID  | Asset   | Title                                           | Severity |
@@ -182,6 +327,7 @@ Severity mapping: Critical (CVSS ≥ 9), High (7.0–8.9), Medium (4.0–6.9), L
 
 ---
 
+<a id="remediation-roadmap"></a>
 ## Remediation Roadmap
 
 1. Immediate (Days 0–7)
@@ -201,12 +347,14 @@ Severity mapping: Critical (CVSS ≥ 9), High (7.0–8.9), Medium (4.0–6.9), L
 
 ---
 
+<a id="conclusion"></a>
 ## Conclusion
 
 The assessment demonstrated viable attack paths from initial access to elevated privileges on both Venus and Napping. Addressing authentication controls, hardening hosts, removing insecure configurations, and improving monitoring will materially reduce risk. Incorporate the remediation roadmap into your security program and validate with a follow-up test.
 
 ---
 
+<a id="appendix-a"></a>
 ## Appendix A — Evidence Gallery (All Screenshots)
 
 <img alt="IPs of Venus and Napping" src="images/ips of venus and napping (1).png" />
@@ -247,6 +395,7 @@ The assessment demonstrated viable attack paths from initial access to elevated 
 
 ---
 
+<a id="appendix-b"></a>
 ## Appendix B — Testing Log (High-Level)
 
 - Reconnaissance and service enumeration across both targets.
@@ -258,6 +407,7 @@ The assessment demonstrated viable attack paths from initial access to elevated 
 
 ---
 
+<a id="appendix-c"></a>
 ## Appendix C — References
 
 - OWASP ASVS and Top 10 for authentication and session management.
