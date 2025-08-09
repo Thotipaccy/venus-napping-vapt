@@ -35,35 +35,6 @@ Prepared by: Nibishaka thoti Pacifique
 
 ---
 
-## Table of Contents 📚
-
-- 1. Web Application Penetration Testing
-  - 1.1 Executive Summary 📝
-  - 1.2 Background 🧭
-  - 1.3 Objectives 🎯
-  - 1.4 Scope of Assessment 🗺️
-  - 1.5 Out of Scope 🚫
-  - 1.6 Tools Used 🧰
-- Executive Summary 📄
-- Scope and Objectives 🎯
-  - In-Scope Assets
-  - Objectives
-  - Constraints and Assumptions
-- Target Overview 🔎
-- Methodology 🔧
-  - Approach
-  - Tools and Techniques
-- Findings — Venus 🛡️
-- Findings — Napping 🛡️
-- Risk Prioritization ⚠️
-- Remediation Roadmap 🛠️
-- Conclusion ✅
-- Appendix A — Evidence Gallery 🖼️
-- Appendix B — Testing Log 🧪
-- Appendix C — References 📚
-
----
-
 <a id="web-app-pt"></a>
 ## 1. Web Application Penetration Testing
 
