@@ -1,8 +1,8 @@
 ## Vulnerability Assessment and Penetration Testing (VAPT) Report
 
 ### Engagement: X Company — Venus and Napping (VulnHub)
-Date: <insert date>
-Prepared by: <your name / team>
+Date: 2025-08-09
+Prepared by: Nibishaka thoti Pacifique
 
 ---
 
@@ -40,15 +40,15 @@ Overall risk: High. Multiple chained findings allow an attacker to gain initial 
 
 The following screenshots document network discovery and target identification.
 
-<img alt="IPs of Venus and Napping" src="kali/ips of venus and napping (1).png" />
+<img alt="IPs of Venus and Napping" src="images/ips of venus and napping (1).png" />
 
 If required, MAC addresses and precise IPs should be read from the above evidence or the related recon screenshots.
 
 Additional reconnaissance artifacts:
 
-<img alt="Venus reconnaissance" src="kali/reconaisse venus (2).png" />
-<img alt="Venus monitoring" src="kali/venus monitoring (3).png" />
-<img alt="Other URLs identified" src="kali/other urls(4).png" />
+<img alt="Venus reconnaissance" src="images/reconaisse venus (2).png" />
+<img alt="Venus monitoring" src="images/venus monitoring (3).png" />
+<img alt="Other URLs identified" src="images/other urls(4).png" />
 
 ---
 
@@ -69,7 +69,7 @@ Additional reconnaissance artifacts:
 
 Evidence of tooling used:
 
-<img alt="LinPEAS execution" src="kali/LinPEAS(15).png" />
+<img alt="LinPEAS execution" src="images/LinPEAS(15).png" />
 
 ---
 
@@ -78,10 +78,10 @@ Evidence of tooling used:
 ### V1. Exposed Administrative Interface (Authentication Weakness) — High
 **Description**: A web administrative interface (e.g., Django admin) was exposed and accessible. Weak credentials allowed successful brute-force login.
 **Evidence**:
-- <img alt="Django administration" src="kali/django administration (5).png" />
-- <img alt="Attempting brute force" src="kali/accessing brute (6).png" />
-- <img alt="Brute force evidence" src="kali/venus brute(7).png" />
-- <img alt="Successful login" src="kali/successfully log in(12).png" />
+- <img alt="Django administration" src="images/django administration (5).png" />
+- <img alt="Attempting brute force" src="images/accessing brute (6).png" />
+- <img alt="Brute force evidence" src="images/venus brute(7).png" />
+- <img alt="Successful login" src="images/successfully log in(12).png" />
 **Impact**: Unauthorized administrative access; full application takeover possible.
 **Likelihood**: High. Weak credentials allow remote exploitation.
 **Remediation**:
@@ -92,7 +92,7 @@ Evidence of tooling used:
 ### V2. Trivially Encoded Secrets (ROT13) — Medium
 **Description**: Sensitive data or credentials observed protected only by ROT13 encoding.
 **Evidence**:
-- <img alt="ROT13 encoded data" src="kali/rot13 encoded(8).png" />
+- <img alt="ROT13 encoded data" src="images/rot13 encoded(8).png" />
 **Impact**: Low barrier to disclosure; facilitates further compromise.
 **Likelihood**: High once discovered.
 **Remediation**:
@@ -102,8 +102,8 @@ Evidence of tooling used:
 ### V3. Local Privilege Escalation via Insecure Configuration — High
 **Description**: Post-compromise enumeration revealed misconfigurations enabling privilege escalation (e.g., writable service, SUID binary, misconfigured cron, or vulnerable package).
 **Evidence**:
-- <img alt="Privilege escalation steps" src="kali/privilege escalation(13).png" />
-- <img alt="Local enumeration with LinPEAS" src="kali/LinPEAS(15).png" />
+- <img alt="Privilege escalation steps" src="images/privilege escalation(13).png" />
+- <img alt="Local enumeration with LinPEAS" src="images/LinPEAS(15).png" />
 **Impact**: Elevation from low-privilege user to higher privileges up to root.
 **Likelihood**: Medium–High depending on environment hardening.
 **Remediation**:
@@ -114,8 +114,8 @@ Evidence of tooling used:
 ### V4. Sensitive Functionality/Endpoint Exposure — Medium
 **Description**: Additional application endpoints and URLs were identified that increase attack surface and may leak information or enable abuse.
 **Evidence**:
-- <img alt="Other URLs identified" src="kali/other urls(4).png" />
-- <img alt="Vulnerability view" src="kali/venlability(16).png" />
+- <img alt="Other URLs identified" src="images/other urls(4).png" />
+- <img alt="Vulnerability view" src="images/venlability(16).png" />
 **Impact**: Information disclosure and potential pivot to higher-impact exploits.
 **Likelihood**: Medium.
 **Remediation**:
@@ -124,11 +124,11 @@ Evidence of tooling used:
 
 Additional Venus evidence and context:
 
-<img alt="Exploit execution on Venus" src="kali/exploit to venus (17).png" />
-<img alt="Venus target" src="kali/venus (18).png" />
-<img alt="Boom / impact evidence" src="kali/boom (18).png" />
-<img alt="Task accomplished on Venus" src="kali/task accomplished venus(19).png" />
-<img alt="User flag obtained" src="kali/user flag (14).png" />
+<img alt="Exploit execution on Venus" src="images/exploit to venus (17).png" />
+<img alt="Venus target" src="images/venus (18).png" />
+<img alt="Boom / impact evidence" src="images/boom (18).png" />
+<img alt="Task accomplished on Venus" src="images/task accomplished venus(19).png" />
+<img alt="User flag obtained" src="images/user flag (14).png" />
 
 ---
 
@@ -137,14 +137,14 @@ Additional Venus evidence and context:
 ### N1. Weak Authentication on Web Entry Point — High
 **Description**: The Napping web application exposed a login or entry point that was susceptible to brute force or credential guessing, leading to account compromise.
 **Evidence**:
-- <img alt="Napping web" src="kali/napping web (20).png" />
-- <img alt="Napping entry point" src="kali/napping entry point (21).png" />
-- <img alt="Path enumeration" src="kali/napping path (22).png" />
-- <img alt="Password identified" src="kali/napping pass (23).png" />
-- <img alt="Brute attack on Napping" src="kali/napping brute atack (24).png" />
-- <img alt="Brute evidence" src="kali/napping brute (25).png" />
-- <img alt="Web Napping additional" src="kali/web napping .png" />
-- <img alt="Logged in evidence" src="kali/logged in .png" />
+- <img alt="Napping web" src="images/napping web (20).png" />
+- <img alt="Napping entry point" src="images/napping entry point (21).png" />
+- <img alt="Path enumeration" src="images/napping path (22).png" />
+- <img alt="Password identified" src="images/napping pass (30).png" />
+- <img alt="Brute attack on Napping" src="images/napping brute atack (24).png" />
+- <img alt="Brute evidence" src="images/napping brute (25).png" />
+- <img alt="Web Napping additional" src="images/web napping .png" />
+- <img alt="Logged in evidence" src="images/logged in .png" />
 **Impact**: Unauthorized access to application functionality and data.
 **Likelihood**: High without rate-limiting and strong password policy.
 **Remediation**:
@@ -154,7 +154,7 @@ Additional Venus evidence and context:
 ### N2. Insufficient Hardening / Information Exposure — Medium
 **Description**: Directory paths and additional context were discoverable, aiding attacker reconnaissance.
 **Evidence**:
-- <img alt="Napping path enumeration" src="kali/napping path (22).png" />
+- <img alt="Napping path enumeration" src="images/napping path (22).png" />
 **Impact**: Facilitates targeted attacks and identification of weak components.
 **Likelihood**: Medium.
 **Remediation**:
@@ -162,8 +162,8 @@ Additional Venus evidence and context:
 
 Network identification evidence:
 
-<img alt="IP of Napping" src="kali/ip of nap (20).png" />
-<img alt="IPs of both targets (reference)" src="kali/ips of venus and napping (1).png" />
+<img alt="IP of Napping" src="images/ip of nap (20).png" />
+<img alt="IPs of both targets (reference)" src="images/ips of venus and napping (1).png" />
 
 ---
 
@@ -209,34 +209,41 @@ The assessment demonstrated viable attack paths from initial access to elevated 
 
 ## Appendix A — Evidence Gallery (All Screenshots)
 
-<img alt="IPs of Venus and Napping" src="kali/ips of venus and napping (1).png" />
-<img alt="Recon Venus" src="kali/reconaisse venus (2).png" />
-<img alt="Venus monitoring" src="kali/venus monitoring (3).png" />
-<img alt="Other URLs" src="kali/other urls(4).png" />
-<img alt="Django Admin" src="kali/django administration (5).png" />
-<img alt="Accessing brute" src="kali/accessing brute (6).png" />
-<img alt="Venus brute" src="kali/venus brute(7).png" />
-<img alt="ROT13 encoded" src="kali/rot13 encoded(8).png" />
-<img alt="Guest brute" src="kali/guest brute(10).png" />
-<img alt="Magellanian" src="kali/magellanian(11).png" />
-<img alt="Successfully log in" src="kali/successfully log in(12).png" />
-<img alt="Privilege escalation" src="kali/privilege escalation(13).png" />
-<img alt="User flag" src="kali/user flag (14).png" />
-<img alt="LinPEAS" src="kali/LinPEAS(15).png" />
-<img alt="Vulnerability view" src="kali/venlability(16).png" />
-<img alt="Exploit to Venus" src="kali/exploit to venus (17).png" />
-<img alt="Venus" src="kali/venus (18).png" />
-<img alt="Boom" src="kali/boom (18).png" />
-<img alt="Task accomplished Venus" src="kali/task accomplished venus(19).png" />
-<img alt="Napping web" src="kali/napping web (20).png" />
-<img alt="IP of Napping" src="kali/ip of nap (20).png" />
-<img alt="Napping entry point" src="kali/napping entry point (21).png" />
-<img alt="Napping path" src="kali/napping path (22).png" />
-<img alt="Napping pass" src="kali/napping pass (23).png" />
-<img alt="Napping brute attack" src="kali/napping brute atack (24).png" />
-<img alt="Napping brute" src="kali/napping brute (25).png" />
-<img alt="Web napping" src="kali/web napping .png" />
-<img alt="Logged in" src="kali/logged in .png" />
+<img alt="IPs of Venus and Napping" src="images/ips of venus and napping (1).png" />
+<img alt="Recon Venus" src="images/reconaisse venus (2).png" />
+<img alt="Venus monitoring" src="images/venus monitoring (3).png" />
+<img alt="Other URLs" src="images/other urls(4).png" />
+<img alt="Django Admin" src="images/django administration (5).png" />
+<img alt="Accessing brute" src="images/accessing brute (6).png" />
+<img alt="Venus brute" src="images/venus brute(7).png" />
+<img alt="ROT13 encoded" src="images/rot13 encoded(8).png" />
+<img alt="Guest brute" src="images/guest brute(10).png" />
+<img alt="Magellanian" src="images/magellanian(11).png" />
+<img alt="Successfully log in" src="images/successfully log in(12).png" />
+<img alt="Privilege escalation" src="images/privilege escalation(13).png" />
+<img alt="User flag" src="images/user flag (14).png" />
+<img alt="LinPEAS" src="images/LinPEAS(15).png" />
+<img alt="Vulnerability view" src="images/venlability(16).png" />
+<img alt="Exploit to Venus" src="images/exploit to venus (17).png" />
+<img alt="Venus" src="images/venus (18).png" />
+<img alt="Boom" src="images/boom (18).png" />
+<img alt="Task accomplished Venus" src="images/task accomplished venus(19).png" />
+<img alt="Napping web" src="images/napping web (20).png" />
+<img alt="IP of Napping" src="images/ip of nap (20).png" />
+<img alt="Napping entry point" src="images/napping entry point (21).png" />
+<img alt="Napping path" src="images/napping path (22).png" />
+<img alt="Napping pass" src="images/napping pass (30).png" />
+<img alt="Napping brute attack" src="images/napping brute atack (24).png" />
+<img alt="Napping brute" src="images/napping brute (25).png" />
+<img alt="Web napping" src="images/web napping .png" />
+<img alt="Logged in" src="images/logged in .png" />
+
+<img alt="Napping server start" src="images/napping server start (27).png" />
+<img alt="Napping created files" src="images/napping created files (28).png" />
+<img alt="Napping submit a IP link" src="images/napping submit a ip link (29).png" />
+<img alt="Napping submit a random link" src="images/napping submit a random link (26).png" />
+<img alt="Napping successful login via SSH" src="images/napping successful log in via ssh (31).png" />
+<img alt="Napping privilege escalation" src="images/napping privelege escaltion (32).png" />
 
 ---
 
